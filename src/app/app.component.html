@@ -1,0 +1,6 @@
+<h1 class="display-4">SimpleWeather</h1>
+
+<div class="form-group">
+    <input class="form-control" placeholder="City, ST" [(ngModel)]="searchText">
+</div>
+<app-weather-forecast-list [searchText]="searchText"></app-weather-forecast-list>

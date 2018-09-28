@@ -1,3 +1,7 @@
-<p>
-  weather-forecast-list works!
-</p>
+<button class="btn btn-primary" (click)="getWeather()"> Get Weather </button>
+
+<h3> {{ cityDetails.cityName }} {{ cityDetails.stateCode }}</h3>
+
+<div *ngFor="let forecast of weatherForecasts">
+      <app-weather-forecast [forecast]="forecast"></app-weather-forecast>
+</div>
