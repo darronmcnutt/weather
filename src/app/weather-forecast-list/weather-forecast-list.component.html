@@ -1,7 +1,26 @@
 <button class="btn btn-primary" (click)="getWeather()"> Get Weather </button>
-
+<p>&nbsp;</p>
 <h3> {{ cityDetails.cityName }} {{ cityDetails.stateCode }}</h3>
 
 <div *ngFor="let forecast of weatherForecasts">
       <app-weather-forecast [forecast]="forecast"></app-weather-forecast>
 </div>
+
+<!-- EXPERIMENT WITH TABLES -->
+<h3> Experimental Table View </h3>
+<table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Min Temp</th>
+          <th scope="col">Max Temp</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let forecast of weatherForecasts">
+          <td>{{ forecast.datetime }}</td>
+          <td>{{ forecast.min_temp }}</td>
+          <td>{{ forecast.max_temp }}</td>
+        </tr>
+      </tbody>
+</table>

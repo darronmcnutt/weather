@@ -17,7 +17,7 @@ export class WeatherForecastListComponent implements OnInit {
   constructor(private http: HttpClient) {
     this.weatherForecasts = [];
     this.weatherBitUrl = ``;
-    this.cityDetails = new CityDetails('','');
+    this.cityDetails = new CityDetails('', '');
   }
 
   getWeather() {
@@ -27,8 +27,6 @@ export class WeatherForecastListComponent implements OnInit {
       console.log('WEATHER RESULTS:');
       console.log(results);
       this.weatherForecasts = results['data'];
-      console.log('WEATHER FORECAST ARRAY:');
-      console.log(this.weatherForecasts);
       this.cityDetails.cityName = results['city_name'];
       this.cityDetails.stateCode = results['state_code'];
     });
